@@ -52,7 +52,10 @@ public class Game {
             row = sc.nextInt();
             canPut = ox.put(col, row);
             if (!canPut) {
-                System.out.println("Please input number between 0-2");
+                if(ox.get(col,row)=="O" || ox.get(col,row)=="X")
+                    System.out.println("This column and row have one, Please try another");
+                else
+                    System.out.println("Please input number between 0-2");
             }
         }while(!canPut);
     }
